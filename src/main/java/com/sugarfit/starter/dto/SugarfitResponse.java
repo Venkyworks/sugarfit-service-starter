@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class ExampleResponse {
+public class SugarfitResponse {
     private String status;
     private String requestId;
 }

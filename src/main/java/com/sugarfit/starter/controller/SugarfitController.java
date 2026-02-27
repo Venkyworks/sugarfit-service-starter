@@ -1,9 +1,9 @@
 
 package com.sugarfit.starter.controller;
 
-import com.sugarfit.starter.dto.ExampleRequest;
-import com.sugarfit.starter.dto.ExampleResponse;
-import com.sugarfit.starter.service.ExampleService;
+import com.sugarfit.starter.dto.SugarfitRequest;
+import com.sugarfit.starter.dto.SugarfitResponse;
+import com.sugarfit.starter.service.SugarfitService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
 @Slf4j
-public class ExampleController {
+public class SugarfitController {
 
-    private final ExampleService exampleService;
+    private final SugarfitService sugarfitService;
 
     @GetMapping("/health")
     public ResponseEntity<String> health() {
@@ -24,8 +24,8 @@ public class ExampleController {
     }
 
     @PostMapping("/example")
-    public ResponseEntity<ExampleResponse> process(@Valid @RequestBody ExampleRequest request) {
+    public ResponseEntity<SugarfitResponse> process(@Valid @RequestBody SugarfitRequest request) {
         log.info("Processing request for userId={}", request.getUserId());
-        return ResponseEntity.ok(exampleService.process(request));
+        return ResponseEntity.ok(sugarfitService.process(request));
     }
 }

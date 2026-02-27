@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class ExampleRequest {
+public class SugarfitRequest {
 
     @NotBlank(message = "userId must not be blank")
     private String userId;
