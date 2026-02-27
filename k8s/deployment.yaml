@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sugarfit-starter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sugarfit-starter
+  template:
+    metadata:
+      labels:
+        app: sugarfit-starter
+    spec:
+      containers:
+        - name: sugarfit-starter
+          image: sugarfit-starter:latest
+          ports:
+            - containerPort: 8080
